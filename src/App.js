@@ -122,11 +122,11 @@ function App() {
             </label>
             <label  style={{margin:"10px"}}>
               <span>Min base pay</span><br/>
-              <input type='number' value={min_Pay || ''} onChange={(e) => setMin_Pay(e.target.value)} />
+              <input type='number' value={min_Pay || ''} onChange={(e) => setMin_Pay(e.target.value)}  placeholder='Min base pay...' />
             </label>
             <label  style={{margin:"10px"}}>
               <span>Company name</span><br/>
-              <input type='text' value={companyName || ''} onChange={(e) => setCompanyName(e.target.value)} />
+              <input type='text' value={companyName || ''} onChange={(e) => setCompanyName(e.target.value)} placeholder='Company name...'  />
             </label>
             
               <div  style={{margin:"10px"}}>
