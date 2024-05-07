@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchDatass = createAsyncThunk('WorkdayApi', async (offset) => {
-    console.log(offset);
+    // console.log(offset);
     const requestData = {
         limit: 10,
         offset: offset
@@ -31,7 +31,7 @@ export const slice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchDatass.fulfilled, (state, action) => {
             // Check if the data already exists in state
-            console.log(action.payload.jdList)
+            // console.log(action.payload.jdList)
             
             state.value = [...state.value, ...action.payload.jdList];
             state.total_count = action.payload.totalCount;

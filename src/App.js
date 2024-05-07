@@ -22,7 +22,7 @@ function App() {
 
  const Dispatch=useDispatch()
  const Workdata=useSelector(state=>state)
- console.log(Workdata)
+//  console.log(Workdata)
   // const fetchData = () => {
   //   console.log(offset)
   //   const requestData = {
@@ -63,13 +63,13 @@ function App() {
         document.documentElement.scrollHeight
       ) {
         // if(Workdata.value.length > Workdata.total_count){
-          console.log(offset)
+          // console.log(offset)
         setIsFetching(true);
         setOffset((prev) => prev + 10)
       // }
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -94,7 +94,7 @@ function App() {
       setFilteredData(filtered);
     } else {
       if(Workdata.value.length > 0){
-        console.log(offset)
+        // console.log(offset)
           setFilteredData(filtered);
           if(  Workdata.checkdata.length > 0){
             setOffset(prev => prev + 10);
@@ -163,14 +163,14 @@ function App() {
           </div></div>
           <div className='list_of_JOb_list'>
             {filteredData.map((item, index) => (
-              <JobCard Carddetail={item} key={item.id}/>
+              <JobCard Carddetail={item} key={index}/>
             ))}
             
           </div>
-          {isFetching && <div class="loader-container">
-    <div class="loader"></div>
+          {isFetching && <div className="loader-container">
+    <div className="loader"></div>
   </div>}
-  {dataNo && <div class="loader-container">
+  {dataNo && <div className="loader-container">
         No data
   </div>}
             
